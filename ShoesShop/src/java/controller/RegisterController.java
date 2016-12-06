@@ -51,17 +51,18 @@ public class RegisterController extends HttpServlet {
         
         User user = new User(firstName, lastName, email, password, mobile);
         
+        db.insertUser(user);
         
-        PrintWriter writer = response.getWriter();
-        writer.print(firstName);
-        writer.print("<br/>");
-        writer.print(lastName);
-        writer.print("<br/>");
-        writer.print(email);
-        writer.print("<br/>");
-        writer.print(password);
-        writer.print("<br/>");
-        writer.print(rePassword);
+//        PrintWriter writer = response.getWriter();
+//        writer.print(firstName);
+//        writer.print("<br/>");
+//        writer.print(lastName);
+//        writer.print("<br/>");
+//        writer.print(email);
+//        writer.print("<br/>");
+//        writer.print(password);
+//        writer.print("<br/>");
+//        writer.print(rePassword);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
