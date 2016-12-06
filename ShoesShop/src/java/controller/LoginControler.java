@@ -43,7 +43,7 @@ public class LoginControler extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("sigup.jsp").forward(request, response);
+        request.getRequestDispatcher("signup.jsp").forward(request, response);
     }
 
     /**
@@ -62,13 +62,14 @@ public class LoginControler extends HttpServlet {
         HttpSession session = request.getSession();
         password = Base64.getEncoder().encodeToString(password.getBytes());
         DatabaseContext db = new DatabaseContext();
+        //
         User user = db.checkUser(email, password);
         if (user != null) {
             session.setAttribute("user", user);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } else {
             request.setAttribute("error", "Email and password not found !");
-            request.getRequestDispatcher("sigup.jsp").forward(request, response);
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
         }
     }
 

@@ -78,6 +78,7 @@ public class DatabaseContext {
             }
 
         } catch (SQLException ex) {
+            System.out.println("");
         }
 
         return user;
