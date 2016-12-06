@@ -50,7 +50,7 @@
             <div class="container">
                 <div class="header-top">
                     <div class="logo">
-                        <a href="index.jsp">N-AIR</a>
+                        <a href="index.jsp">Jw-Shop</a>
                     </div>
                     <div class="login-bars">
                         <a class="btn btn-default log-bar" href="register.jsp" role="button">Sign up</a>

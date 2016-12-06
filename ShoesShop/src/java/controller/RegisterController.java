@@ -61,12 +61,6 @@ public class RegisterController extends HttpServlet {
             request.setAttribute("invalidEmail", "invalidEmail");
             isFail = true;
         }
-        Pattern ptrMobile = Pattern.compile(".*[^0-9].*");
-        if (!ptrMobile.matcher(mobile).matches()) {
-            returnInfo(request, firstName.trim(), lastName.trim(), email.trim(), password, rePassword, mobile.trim());
-            request.setAttribute("invalidMobile", "invalidMobile");
-            isFail = true;
-        }
         
         if (isFail) {
             request.getRequestDispatcher("register.jsp").forward(request, response);
@@ -74,21 +68,8 @@ public class RegisterController extends HttpServlet {
         }
 
         password = Base64.getEncoder().encodeToString(password.getBytes());
-
         User user = new User(firstName, lastName, email, password, mobile);
-
         db.insertUser(user);
-        
-        PrintWriter writer = response.getWriter();
-        writer.print(firstName);
-        writer.print("<br/>");
-        writer.print(lastName);
-        writer.print("<br/>");
-        writer.print(email);
-        writer.print("<br/>");
-        writer.print(password);
-        writer.print("<br/>");
-        writer.print(rePassword);
     }
 
     public void returnInfo(HttpServletRequest request,

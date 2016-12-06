@@ -277,7 +277,7 @@
                 <div class="col-md-2 re-ft-grd">
                     <div class="bt-logo">
                         <div class="logo">
-                            <a href="index.jsp" class="ft-log">N-AIR</a>
+                            <a href="index.jsp" class="ft-log">Jw-Shop</a>
                         </div>
                     </div>
                 </div>

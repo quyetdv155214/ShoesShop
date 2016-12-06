@@ -130,12 +130,6 @@
                         <ul>
                             <li class="text-info">Mobile Number:</li>
                             <li><input type="text" name="mobile" value="<%= mobile%>"></li>
-                                <%if (invalidMobile.equals("invalidMobile")) {%>
-                            <li style="color: red">
-                                Your mobile number invalid
-                            </li>
-                            <% request.setAttribute("invalidMobile", null); %>
-                            <%}%> 
                         </ul>						
                         <input type="submit" value="Register Now">
                         <p class="click">By clicking this button, you are agree to my  <a href="#">Policy Terms and Conditions.</a></p> 
@@ -179,7 +173,7 @@
                 <div class="col-md-2 re-ft-grd">
                     <div class="bt-logo">
                         <div class="logo">
-                            <a href="index.jsp" class="ft-log">N-AIR</a>
+                            <a href="index.jsp" class="ft-log">Jw-Shop</a>
                         </div>
                     </div>
                 </div>
