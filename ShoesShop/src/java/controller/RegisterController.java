@@ -38,7 +38,7 @@ public class RegisterController extends HttpServlet {
             out.println("<title>Servlet RegisterController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RegisterController at " + request.getContextPath() + "</h1>");
+            out .println("<h1>Servlet RegisterController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
