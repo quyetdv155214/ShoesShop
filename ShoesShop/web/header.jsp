@@ -4,6 +4,7 @@
     Author     : q
 --%>
 
+<%@page import="model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -44,6 +45,8 @@
             });
         </script>
         <!-- //FlexSlider-->
+        
+        <% User user = (User)request.getAttribute("user"); %>
     </head>
     <body>
         <div class="header">
@@ -53,8 +56,16 @@
                         <a href="index.jsp">N-AIR</a>
                     </div>
                     <div class="login-bars">
+                        <% if(user == null) {%>
                         <a class="btn btn-default log-bar" href="register.jsp" role="button">Sign up</a>
                         <a class="btn btn-default log-bar" href="signup.jsp" role="button">Login</a>
+                        <%}else {%>{
+                            <%= user.getFirstName() +" " + user.getLastName()  %>
+                            <form action="logout" method="post">
+                                <a class="btn btn-default log-bar" href="javascript:{}" onclick="document.getElementById('my_form').submit(); return false;" role="button">Log out</a>
+                            </form>
+                        }
+                        
                         <div class="cart box_1">
                             <a href="checkout.jsp">
                                 <h3>

@@ -5,22 +5,19 @@
  */
 package controller;
 
-import dal.DatabaseContext;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Base64;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.User;
 
 /**
  *
  * @author q
  */
-public class LoginControler extends HttpServlet {
+public class Logout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,6 +28,14 @@ public class LoginControler extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
+        session.setAttribute("user", null);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -43,7 +48,7 @@ public class LoginControler extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("sigup.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -57,19 +62,7 @@ public class LoginControler extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        HttpSession session = request.getSession();
-        password = Base64.getEncoder().encodeToString(password.getBytes());
-        DatabaseContext db = new DatabaseContext();
-        User user = db.checkUser(email, password);
-        if (user != null) {
-            session.setAttribute("user", user);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        } else {
-            request.setAttribute("error", "Email and password not found !");
-            request.getRequestDispatcher("sigup.jsp").forward(request, response);
-        }
+        processRequest(request, response);
     }
 
     /**
