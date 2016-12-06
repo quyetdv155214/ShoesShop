@@ -30,41 +30,41 @@ public class RegisterController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-<<<<<<< HEAD
+
         String firstName = request.getParameter("firstname");
         String lastName = request.getParameter("lastname");
         String email = request.getParameter("mail");
         String password = request.getParameter("password");
         String rePassword = request.getParameter("repassword");
-        
+
         if (!password.equals(rePassword)) {
             request.setAttribute("passFail", "passFail");
             request.getRequestDispatcher("register.jsp").forward(request, response);
-=======
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RegisterController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out .println("<h1>Servlet RegisterController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
->>>>>>> cfb1ccb4b70e3010faa8d7c61aef4e5be4344dbe
+
+            try (PrintWriter out = response.getWriter()) {
+                /* TODO output your page here. You may use following sample code. */
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>Servlet RegisterController</title>");
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<h1>Servlet RegisterController at " + request.getContextPath() + "</h1>");
+                out.println("</body>");
+                out.println("</html>");
+
+                PrintWriter writer = response.getWriter();
+                writer.print(firstName);
+                writer.print("<br/>");
+                writer.print(lastName);
+                writer.print("<br/>");
+                writer.print(email);
+                writer.print("<br/>");
+                writer.print(password);
+                writer.print("<br/>");
+                writer.print(rePassword);
+            }
         }
-        
-        PrintWriter writer = response.getWriter();
-        writer.print(firstName);
-        writer.print("<br/>");
-        writer.print(lastName);
-        writer.print("<br/>");
-        writer.print(email);
-        writer.print("<br/>");
-        writer.print(password);
-        writer.print("<br/>");
-        writer.print(rePassword);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
