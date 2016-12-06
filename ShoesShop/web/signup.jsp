@@ -194,7 +194,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <p>Welcome, please enter the following to continue.</p>
                         <p>If you have previously Login with us, <a href="#">Click Here</a></p>
                         <form>
-                            <h5>User Name:</h5>	
+                            <h5>Email:</h5>	
                             <input type="text" value="">
                             <h5>Password:</h5>
                             <input type="password" value=""><br>					
