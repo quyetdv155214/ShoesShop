@@ -6,6 +6,12 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -51,13 +57,13 @@
             <div class="container">
                 <div class="header-top">
                     <div class="logo">
-                        <a href="index.html">N-AIR</a>
+                        <a href="index.jsp">N-AIR</a>
                     </div>
                     <div class="login-bars">
-                        <a class="btn btn-default log-bar" href="register.html" role="button">Sign up</a>
-                        <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
+                        <a class="btn btn-default log-bar" href="register.jsp" role="button">Sign up</a>
+                        <a class="btn btn-default log-bar" href="signup.jsp" role="button">Login</a>
                         <div class="cart box_1">
-                            <a href="checkout.html">
+                            <a href="checkout.jsp">
                             <h3>
                                 <div class="total">
 <span class="simpleCart_total"></span>(<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)</div></h3>
@@ -87,13 +93,13 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Shoes</a></li>
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Tops</a></li>
+                                        <li><a href="products.jsp">Shoes</a></li>
+                                        <li><a href="products.jsp">Tees</a></li>
+                                        <li><a href="products.jsp">Tops</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Tracks</a></li>
+                                        <li><a href="products.jsp">Tracks</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.jsp">Gear</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -102,13 +108,13 @@
                                         <div class="row">
                                             <div class="col-sm-4 menu-img-pad">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Joggers</a></li>
-                                                    <li><a href="products.html">Foot Ball</a></li>
-                                                    <li><a href="products.html">Cricket</a></li>
+                                                    <li><a href="products.jsp">Joggers</a></li>
+                                                    <li><a href="products.jsp">Foot Ball</a></li>
+                                                    <li><a href="products.jsp">Cricket</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Tennis</a></li>
+                                                    <li><a href="products.jsp">Tennis</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Casual</a></li>
+                                                    <li><a href="products.jsp">Casual</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-4 menu-img-pad">
@@ -126,13 +132,13 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Tops</a></li>
-                                                    <li><a href="products.html">Bottoms</a></li>
-                                                    <li><a href="products.html">Yoga Pants</a></li>
+                                                    <li><a href="products.jsp">Tops</a></li>
+                                                    <li><a href="products.jsp">Bottoms</a></li>
+                                                    <li><a href="products.jsp">Yoga Pants</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Sports</a></li>
+                                                    <li><a href="products.jsp">Sports</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Gym</a></li>
+                                                    <li><a href="products.jsp">Gym</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6">
@@ -144,16 +150,16 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">kids<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Shorts</a></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.jsp">Tees</a></li>
+                                        <li><a href="products.jsp">Shorts</a></li>
+                                        <li><a href="products.jsp">Gear</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Watches</a></li>
+                                        <li><a href="products.jsp">Watches</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Shoes</a></li>
+                                        <li><a href="products.jsp">Shoes</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Catch</a></li>
+                                <li><a href="contact.jsp">Catch</a></li>
                                 <div class="clearfix"></div>
                             </ul>
                             <div class="clearfix"></div>
@@ -172,50 +178,43 @@
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="register.html">LOGIN</a></li>
-                    <li class="active">REGISTER</li>
+                    <li><a href="index.jsp">HOME</a></li>
+                    <li class="active">LOGIN</li>
                 </ol>
             </div>
         </div>
-        <!-- reg-form -->
-	<div class="reg-form">
-		<div class="container">
-			<div class="reg">
-				<h3>Register Now</h3>
-				<p>Welcome, please enter the following details to continue.</p>
-				<p>If you have previously registered with us, <a href="#">click here</a></p>
-				 <form>
-					<ul>
-						<li class="text-info">First Name: </li>
-						<li><input type="text" value=""></li>
-					</ul>
-					<ul>
-						<li class="text-info">Last Name: </li>
-						<li><input type="text" value=""></li>
-					 </ul>				 
-					<ul>
-						<li class="text-info">Email: </li>
-						<li><input type="text" value=""></li>
-					</ul>
-					<ul>
-						<li class="text-info">Password: </li>
-						<li><input type="password" value=""></li>
-					</ul>
-					<ul>
-						<li class="text-info">Re-enter Password:</li>
-						<li><input type="password" value=""></li>
-					</ul>
-					<ul>
-						<li class="text-info">Mobile Number:</li>
-						<li><input type="text" value=""></li>
-					</ul>						
-					<input type="submit" value="Register Now">
-					<p class="click">By clicking this button, you are agree to my  <a href="#">Policy Terms and Conditions.</a></p> 
-				</form>
-			</div>
-		</div>
-	</div>
+        <!--signup-->
+        <!-- login-page -->
+        <div class="login">
+            <div class="container">
+                <div class="login-grids">
+                    <div class="col-md-6 log">
+                             <h3>Login</h3>
+                             <div class="strip"></div>
+                             <p>Welcome, please enter the following to continue.</p>
+                             <p>If you have previously Login with us, <a href="#">Click Here</a></p>
+                             <form>
+                                 <h5>User Name:</h5>	
+                                 <input type="text" value="">
+                                 <h5>Password:</h5>
+                                 <input type="password" value=""><br>					
+                                 <input type="submit" value="Login">
+
+                             </form>
+                            <a href="#">Forgot Password ?</a>
+                    </div>
+                    <div class="col-md-6 login-right">
+                            <h3>New Registration</h3>
+                            <div class="strip"></div>
+                            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                            <a href="register.jsp" class="button">Create An Account</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+<!-- //login-page -->
+        <!--signup-->
         <div class="footer-grid">
             <div class="container">
                 <div class="col-md-2 re-ft-grd">
@@ -237,7 +236,7 @@
                         <li><a href="#">Delivery</a></li>
                         <li><a href="#">Return Policy</a></li>
                         <li><a href="#">Terms & conditions</a></li>
-                        <li><a href="contact.html">Sitemap</a></li>
+                        <li><a href="contact.jsp">Sitemap</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 re-ft-grd">
@@ -252,7 +251,7 @@
                 <div class="col-md-2 re-ft-grd">
                     <div class="bt-logo">
                         <div class="logo">
-                            <a href="index.html" class="ft-log">N-AIR</a>
+                            <a href="index.jsp" class="ft-log">N-AIR</a>
                         </div>
                     </div>
                 </div>

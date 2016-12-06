@@ -36,13 +36,13 @@
             <div class="container">
                 <div class="header-top">
                     <div class="logo">
-                        <a href="index.html">N-AIR</a>
+                        <a href="index.jsp">N-AIR</a>
                     </div>
                     <div class="login-bars">
-                        <a class="btn btn-default log-bar" href="register.html" role="button">Sign up</a>
-                        <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
+                        <a class="btn btn-default log-bar" href="register.jsp" role="button">Sign up</a>
+                        <a class="btn btn-default log-bar" href="signup.jsp" role="button">Login</a>
                         <div class="cart box_1">
-                            <a href="checkout.html">
+                            <a href="checkout.jsp">
                             <h3>
                                 <div class="total">
 <span class="simpleCart_total"></span>(<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)</div></h3>
@@ -73,13 +73,13 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Shoes</a></li>
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Tops</a></li>
+                                        <li><a href="products.jsp">Shoes</a></li>
+                                        <li><a href="products.jsp">Tees</a></li>
+                                        <li><a href="products.jsp">Tops</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Tracks</a></li>
+                                        <li><a href="products.jsp">Tracks</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.jsp">Gear</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -88,13 +88,13 @@
                                         <div class="row">
                                             <div class="col-sm-4 menu-img-pad">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Joggers</a></li>
-                                                    <li><a href="products.html">Foot Ball</a></li>
-                                                    <li><a href="products.html">Cricket</a></li>
+                                                    <li><a href="products.jsp">Joggers</a></li>
+                                                    <li><a href="products.jsp">Foot Ball</a></li>
+                                                    <li><a href="products.jsp">Cricket</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Tennis</a></li>
+                                                    <li><a href="products.jsp">Tennis</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Casual</a></li>
+                                                    <li><a href="products.jsp">Casual</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-4 menu-img-pad">
@@ -112,13 +112,13 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Tops</a></li>
-                                                    <li><a href="products.html">Bottoms</a></li>
-                                                    <li><a href="products.html">Yoga Pants</a></li>
+                                                    <li><a href="products.jsp">Tops</a></li>
+                                                    <li><a href="products.jsp">Bottoms</a></li>
+                                                    <li><a href="products.jsp">Yoga Pants</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Sports</a></li>
+                                                    <li><a href="products.jsp">Sports</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Gym</a></li>
+                                                    <li><a href="products.jsp">Gym</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6">
@@ -130,16 +130,16 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">kids<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Shorts</a></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.jsp">Tees</a></li>
+                                        <li><a href="products.jsp">Shorts</a></li>
+                                        <li><a href="products.jsp">Gear</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Watches</a></li>
+                                        <li><a href="products.jsp">Watches</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Shoes</a></li>
+                                        <li><a href="products.jsp">Shoes</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Catch</a></li>
+                                <li><a href="contact.jsp">Catch</a></li>
                                 <div class="clearfix"></div>
                             </ul>
                             <div class="clearfix"></div>
@@ -246,7 +246,7 @@
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.jsp">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -266,7 +266,7 @@
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.jsp">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -286,7 +286,7 @@
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.jsp">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -306,7 +306,7 @@
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.jsp">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -326,7 +326,7 @@
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.jsp">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -346,7 +346,7 @@
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.jsp">Quick view</a>
                     </div>
                 </div>
         <div class="clearfix"></div>
@@ -382,7 +382,7 @@
                         <li><a href="#">Delivery</a></li>
                         <li><a href="#">Return Policy</a></li>
                         <li><a href="#">Terms & conditions</a></li>
-                        <li><a href="contact.html">Sitemap</a></li>
+                        <li><a href="contact.jsp">Sitemap</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 re-ft-grd">
@@ -397,7 +397,7 @@
                 <div class="col-md-2 re-ft-grd">
                     <div class="bt-logo">
                         <div class="logo">
-                            <a href="index.html" class="ft-log">N-AIR</a>
+                            <a href="index.jsp" class="ft-log">N-AIR</a>
                         </div>
                     </div>
                 </div>
