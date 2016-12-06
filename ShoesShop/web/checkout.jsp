@@ -172,7 +172,7 @@
             <div class="container">
                 <ol class="breadcrumb">
                     <li><a href="index.jsp">Home</a></li>
-                    <li><a href="products.hml">Products</a></li>
+                    <li><a href="products.jsp">Products</a></li>
                     <li class="active">CART</li>
                 </ol>
             </div>
