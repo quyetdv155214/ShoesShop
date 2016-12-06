@@ -7,9 +7,11 @@ package dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.User;
 
 /**
  *
@@ -31,7 +33,19 @@ public class DatabaseContext {
         }
     }
 
-    public void insertUser() {
-        String sql = "";
+    public void insertUser(User user) {
+        String sql = "INSERT INTO [UserTBL] ([FirstName], [LastName], [Email], [Password], [MobieNumber]) VALUES(?,?,?,?,?)";
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getLastName());
+            statement.setString(3, user.getEmail());
+            statement.setString(4, user.getPassword());
+            statement.setString(5, user.getMobile());
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 }
