@@ -10,7 +10,7 @@ package model;
  * @author FLY
  */
 public class Product {
-    private int ProductID;
+    private Integer ProductID;
     private String ProductName;
     private int BrandID;
     private int TypeID;
@@ -111,6 +111,12 @@ public class Product {
     public void setUrl(String Url) {
         this.Url = Url;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" + "ProductID=" + ProductID + ", ProductName=" + ProductName + ", BrandID=" + BrandID + ", TypeID=" + TypeID + ", DiscountID=" + DiscountID + ", CategoriID=" + CategoriID + ", KindID=" + KindID + ", Url=" + Url + ", Price=" + Price + ", detail=" + detail + '}';
+    }
+    
     
     
     

@@ -74,7 +74,7 @@
 
                         <div class="ih-item square effect3 bottom_to_top">
                             <div class="bottom-2-top">
-                                <div class="img"><img src="images/grid6.jpg" alt="/" class="img-responsive gri-wid"></div>
+                                <div class="img"><img src="<%= p.getUrl()%>" alt="/" class="img-responsive gri-wid"></div>
                                 <div class="info">
                                     <div class="pull-left styl-hdn">
                                         <h3><%= p.getProductName()%></h3>
@@ -87,7 +87,11 @@
                         </div>
                         <!-- end normal -->
                         <div class="quick-view">
-                            <a href="single.jsp">Quick view</a>
+                            <form action="singleView" method="post" id="single<%= p.getProductID() %>">
+                                <input type="hidden" name="productId" value="<%= p.getProductID()%>">
+                            </form>
+                            <a href="javascript:{}" onclick="document.getElementById('single<%= p.getProductID() %>').submit(); return false;">Quick view</a>
+
                         </div>
                     </div>
                     <%}%>

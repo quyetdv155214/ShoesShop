@@ -43,6 +43,10 @@ public class NaviControler extends HttpServlet {
             ArrayList<Integer> kindID = new ArrayList<>();
             kindID.add(Integer.parseInt(kind));
             ArrayList<Product> productByKind = db.getProductByKind(kindID);
+            for (Product product : productByKind) {
+                System.out.println(product.getUrl());
+                
+            }
             request.setAttribute("products", productByKind);
             request.getRequestDispatcher("products.jsp").forward(request, response);
 

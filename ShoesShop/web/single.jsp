@@ -4,6 +4,7 @@
     Author     : Jic
 --%>
 
+<%@page import="model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="header.jsp" />
 <!DOCTYPE html>
@@ -45,6 +46,8 @@
             });
         </script>
         <!-- //FlexSlider-->
+        <% Product product = (Product) request.getAttribute("product"); %>
+        
     </head>
     <body>
      
@@ -63,17 +66,9 @@
                     <div class="flexslider">
                         <ul class="slides">
                             <li data-thumb="images/show.jpg">
-                                <div class="thumb-image"> <img src="images/show.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                                <div class="thumb-image"> <img src="<%= product.getUrl() %>" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li data-thumb="images/show1.jpg">
-                                <div class="thumb-image"> <img src="images/show1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
-                            <li data-thumb="images/show2.jpg">
-                                <div class="thumb-image"> <img src="images/show2.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
-                            <li data-thumb="images/show3.jpg">
-                                <div class="thumb-image"> <img src="images/show3.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
+                           
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -81,9 +76,9 @@
                 <div class="col-md-4 showcase">
                     <div class="showcase-rt-top">
                         <div class="pull-left shoe-name">
-                            <h3>Nike Air Max 2015</h3>
-                            <p>Men's running shoes</p>
-                            <h4>&#36;190</h4>
+                            <h3><%= product.getProductName() %></h3>
+                            
+                            <h4><%= product.getPrice() %></h4>
                         </div>
                         <div class="pull-left rating-stars">
                             <ul>
@@ -92,6 +87,8 @@
                                 <li><a href="#" class="active"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
                                 <li><a href="#"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
                                 <li><a href="#"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+                                
+                                
                             </ul>
                         </div>
                         <div class="clearfix"></div>

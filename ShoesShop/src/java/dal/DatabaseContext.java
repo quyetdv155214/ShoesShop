@@ -76,7 +76,7 @@ public class DatabaseContext {
 
     public void getProductByResultSet(ResultSet rs, ArrayList<Product> products) {
         try {
-            if (rs.next()) {
+            while (rs.next()) {
                 int ProductID = rs.getInt("ProductID");
                 String ProductName = rs.getString("ProductName");
                 int BrandID = rs.getInt("BrandID");
@@ -234,6 +234,46 @@ public class DatabaseContext {
         }
 
         return getOrderOfUser;
+    }
+
+    public Product getProductByID(int id) {
+        String sql = "SELECT [ProductID]"
+                + "      ,[ProductName]"
+                + "      ,[BrandID]"
+                + "      ,[TypeID]"
+                + "      ,[DiscountID]"
+                + "      ,[CategoriID]"
+                + "      ,[KindID]"
+                + "      ,[Url]"
+                + "      ,[Price]"
+                + "      ,[Detail]"
+                + "  FROM [dbo].[ProductTBL] where ProductID =? ";
+        Product product = null;
+
+        PreparedStatement ps;
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int ProductID = rs.getInt("ProductID");
+                String ProductName = rs.getString("ProductName");
+                int BrandID = rs.getInt("BrandID");
+                int TypeID = rs.getInt("TypeID");
+                int DiscountID = rs.getInt("DiscountID");
+                int CategoriID = rs.getInt("CategoriID");
+                int KindID = rs.getInt("KindID");
+                String Url = rs.getString("Url");
+                float Price = rs.getFloat("Price");
+                String Detail = rs.getString("Detail");
+                product = new Product(ProductID, ProductName, BrandID, TypeID, DiscountID, CategoriID, KindID, Url, Price, Detail);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return product;
     }
 
 }
