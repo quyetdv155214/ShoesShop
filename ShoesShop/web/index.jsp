@@ -30,7 +30,11 @@
             <div class="container">
                 <div class="header-top">
                     <div class="logo">
+<<<<<<< HEAD
                         <a href="index.jsp">JShop</a>
+=======
+                        <a href="index.jsp">N-AIR</a>
+>>>>>>> 4403ade9fb283503d46be734d0dbf25d25885a9c
                     </div>
                     <div class="login-bars">
                         <a class="btn btn-default log-bar" href="register.jsp" role="button">Sign up</a>
@@ -399,7 +403,11 @@
             </div>
             <div class="copy-rt">
                 <div class="container">
+<<<<<<< HEAD
             <p>&copy;   Project Java Web - SE1007</p>
+=======
+            <p>&copy;   2015 N-AIR All Rights Reserved. Design by <a href="http://www.w3layouts.com">w3layouts</a></p>
+>>>>>>> 4403ade9fb283503d46be734d0dbf25d25885a9c
                 </div>
             </div>
         </div>

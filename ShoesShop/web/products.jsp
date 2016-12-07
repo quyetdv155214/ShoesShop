@@ -4,6 +4,11 @@
     Author     : Jic
 --%>
 
+<%@page import="model.Type"%>
+<%@page import="model.Discount"%>
+<%@page import="model.Brand"%>
+<%@page import="model.Categori"%>
+<%@page import="dal.DatabaseContext"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -54,6 +59,21 @@
         <% if (products == null) { %>
         <% products = new ArrayList<Product>(); %>
         <%}%>
+        <%
+//            ArrayList<Integer> categori = (ArrayList<Integer>) request.getAttribute("categori");
+//            ArrayList<Integer> discount = (ArrayList<Integer>) request.getAttribute("discount");
+//            ArrayList<Integer> type = (ArrayList<Integer>) request.getAttribute("type");
+//            ArrayList<Integer> brand = (ArrayList<Integer>) request.getAttribute("brand");
+            
+            DatabaseContext db = new DatabaseContext();
+            ArrayList<Categori> categori = db.getCategori();
+            ArrayList<Brand> brand = db.getBrand();
+            ArrayList<Discount> discount = db.getDiscount();
+            ArrayList<Type> type = db.getType();
+            
+            
+            
+        %>
     </head>
     <body>
 
@@ -87,10 +107,10 @@
                         </div>
                         <!-- end normal -->
                         <div class="quick-view">
-                            <form action="singleView" method="post" id="single<%= p.getProductID() %>">
+                            <form action="singleView" method="post" id="single<%= p.getProductID()%>">
                                 <input type="hidden" name="productId" value="<%= p.getProductID()%>">
                             </form>
-                            <a href="javascript:{}" onclick="document.getElementById('single<%= p.getProductID() %>').submit(); return false;">Quick view</a>
+                            <a href="javascript:{}" onclick="document.getElementById('single<%= p.getProductID()%>').submit(); return false;">Quick view</a>
 
                         </div>
                     </div>
@@ -104,90 +124,17 @@
                         <section  class="sky-form">
                             <div class="product_right">
                                 <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categories</h4>
-                                <div class="tab1">
-                                    <ul class="place">								
-                                        <li class="sort">Shoes</li>
-                                        <li class="by"><img src="images/do.png" alt=""></li>
-                                        <div class="clearfix"> </div>
-                                    </ul>
-                                    <div class="single-bottom">						
-                                        <a href="#"><p>Running</p></a>
-                                        <a href="#"><p>Foot ball</p></a>
-                                        <a href="#"><p>Daily</p></a>
-                                        <a href="#"><p>Sneakers</p></a>
-                                    </div>
-                                </div>						  
-                                <div class="tab2">
-                                    <ul class="place">								
-                                        <li class="sort">Clothing</li>
-                                        <li class="by"><img src="images/do.png" alt=""></li>
-                                        <div class="clearfix"> </div>
-                                    </ul>
-                                    <div class="single-bottom">						
-                                        <a href="#"><p>Tracks</p></a>
-                                        <a href="#"><p>Tees</p></a>
-                                        <a href="#"><p>Hair bands</p></a>
-                                        <a href="#"><p>Wrist bands</p></a>
-                                    </div>
+                                <div class="single-bottom">	
+                                    <%for (Categori c : categori) {%>
+                                    <label class="checkbox"><input type="checkbox" name="categori" value="<%=c.getId() %>"><i></i><%=c.getName() %></label>
+                                    <%}%>
+<!--                                    <label class="checkbox"><input type="checkbox" name="categori"><i></i>Running</label>
+                                    <label class="checkbox"><input type="checkbox" name="categori"><i></i>Foot ball</label>
+                                    <label class="checkbox"><input type="checkbox" name="categori"><i></i>Daily</label>
+                                    <label class="checkbox"><input type="checkbox" name="categori"><i></i>Sneakers</label>-->
                                 </div>
-                                <div class="tab3">
-                                    <ul class="place">								
-                                        <li class="sort">Gear</li>
-                                        <li class="by"><img src="images/do.png" alt=""></li>
-                                        <div class="clearfix"> </div>
-                                    </ul>
-                                    <div class="single-bottom">						
-                                        <a href="#"><p>Running app</p></a>
-                                        <a href="#"><p>Training club</p></a>
-                                        <a href="#"><p>Nike Fuel+Band se</p></a>
-                                    </div>
-                                </div>						  
-                                <!--script-->
-                                <script>
-                                    $(document).ready(function () {
-                                        $(".tab1 .single-bottom").hide();
-                                        $(".tab2 .single-bottom").hide();
-                                        $(".tab3 .single-bottom").hide();
-                                        $(".tab4 .single-bottom").hide();
-                                        $(".tab5 .single-bottom").hide();
 
-                                        $(".tab1 ul").click(function () {
-                                            $(".tab1 .single-bottom").slideToggle(300);
-                                            $(".tab2 .single-bottom").hide();
-                                            $(".tab3 .single-bottom").hide();
-                                            $(".tab4 .single-bottom").hide();
-                                            $(".tab5 .single-bottom").hide();
-                                        })
-                                        $(".tab2 ul").click(function () {
-                                            $(".tab2 .single-bottom").slideToggle(300);
-                                            $(".tab1 .single-bottom").hide();
-                                            $(".tab3 .single-bottom").hide();
-                                            $(".tab4 .single-bottom").hide();
-                                            $(".tab5 .single-bottom").hide();
-                                        })
-                                        $(".tab3 ul").click(function () {
-                                            $(".tab3 .single-bottom").slideToggle(300);
-                                            $(".tab4 .single-bottom").hide();
-                                            $(".tab5 .single-bottom").hide();
-                                            $(".tab2 .single-bottom").hide();
-                                            $(".tab1 .single-bottom").hide();
-                                        })
-                                        $(".tab4 ul").click(function () {
-                                            $(".tab4 .single-bottom").slideToggle(300);
-                                            $(".tab5 .single-bottom").hide();
-                                            $(".tab3 .single-bottom").hide();
-                                            $(".tab2 .single-bottom").hide();
-                                            $(".tab1 .single-bottom").hide();
-                                        })
-                                        $(".tab5 ul").click(function () {
-                                            $(".tab5 .single-bottom").slideToggle(300);
-                                            $(".tab4 .single-bottom").hide();
-                                            $(".tab3 .single-bottom").hide();
-                                            $(".tab2 .single-bottom").hide();
-                                            $(".tab1 .single-bottom").hide();
-                                        })
-                                    });
-                                </script>
+
                                 <!-- script -->					 
                         </section>
                         <section  class="sky-form">
