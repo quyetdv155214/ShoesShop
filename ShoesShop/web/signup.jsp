@@ -57,7 +57,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li><a href="index.jsp">HOME</a></li>
+                    <li><a href="index">HOME</a></li>
                     <li class="active">LOGIN</li>
                 </ol>
             </div>
@@ -131,7 +131,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-md-2 re-ft-grd">
                     <div class="bt-logo">
                         <div class="logo">
-                            <a href="index.jsp" class="ft-log">JShop</a>
+                            <a href="index" class="ft-log">JShop</a>
                         </div>
                     </div>
                 </div>

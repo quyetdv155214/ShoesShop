@@ -20,6 +20,14 @@
         <servlet-name>SingleViewControler</servlet-name>
         <servlet-class>controller.SingleViewControler</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetAllProduct</servlet-name>
+        <servlet-class>controller.GetAllProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetProductByKind</servlet-name>
+        <servlet-class>controller.GetProductByKind</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterController</servlet-name>
         <url-pattern>/register</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>SingleViewControler</servlet-name>
         <url-pattern>/singleView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAllProduct</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetProductByKind</servlet-name>
+        <url-pattern>/kind</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

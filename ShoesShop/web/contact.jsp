@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>N-Air a E-commerce category Flat Bootstrap Responsive Website Template | Contact :: w3layouts</title>
+        <title>JShop</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="N-Air Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
@@ -51,7 +51,7 @@
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="index">Home</a></li>
                     <li class="active">Contact</li>
                 </ol>
             </div>
@@ -121,7 +121,7 @@
                 <div class="col-md-2 re-ft-grd">
                     <div class="bt-logo">
                         <div class="logo">
-                            <a href="index.jsp" class="ft-log">JShop</a>
+                            <a href="index" class="ft-log">JShop</a>
                         </div>
                     </div>
                 </div>

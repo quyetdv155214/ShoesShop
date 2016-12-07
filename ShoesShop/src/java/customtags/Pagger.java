@@ -22,6 +22,7 @@ public class Pagger extends TagSupport {
     private int totalPage;
     private int step;
     private String href;
+    private String kind;
 
     @Override
     public int doStartTag() throws JspException {
@@ -31,12 +32,12 @@ public class Pagger extends TagSupport {
             out.write("<ul class=\"pagination\">\n");
             
             if (pageIndex - step > 1) {
-                out.write(hyperLink("First", href, 1));
+                out.write(hyperLink("First", href, 1, kind));
             }
 
             for (int i = step; i > 0; i--) {
                 if (pageIndex - i > 0) {
-                    out.write(hyperLink(pageIndex - i + "", href, (pageIndex - i)));
+                    out.write(hyperLink(pageIndex - i + "", href, (pageIndex - i), kind));
                 }
             }
 
@@ -44,23 +45,28 @@ public class Pagger extends TagSupport {
 
             for (int i = 1; i <= step; i++) {
                 if (pageIndex + i <= totalPage) {
-                    out.write(hyperLink(pageIndex + i + "", href, (pageIndex + i)));
+                    out.write(hyperLink(pageIndex + i + "", href, (pageIndex + i), kind));
                 }
             }
 
             if (pageIndex + step < totalPage) {
-                out.write(hyperLink("Last", href, totalPage));
+                out.write(hyperLink("Last", href, totalPage, kind));
             }
             
             out.write("</ul>");
+            
+//            out.write("<br/>");
+//            out.write(href+kind);
         } catch (IOException ex) {
             Logger.getLogger(Pagger.class.getName()).log(Level.SEVERE, null, ex);
         }
         return SKIP_BODY;
     }
 
-    private String hyperLink(String text, String href, int page) {
-        String link = "<li> " + "<a style=\"margin-left: 10px\" href=\"" + href + page + "\">" + text + "</a>" + "</li>";
+    
+
+    private String hyperLink(String text, String href, int page, String kind) {
+        String link = "<li> " + "<a style=\"margin-left: 10px\" href=\"" + href + page + kind + "\">" + text + "</a>" + "</li>";
         return link;
     }
 
@@ -95,4 +101,14 @@ public class Pagger extends TagSupport {
     public void setHref(String href) {
         this.href = href;
     }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+   
 }

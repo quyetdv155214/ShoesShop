@@ -8,6 +8,7 @@ package controller;
 import dal.DatabaseContext;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +17,9 @@ import model.Product;
 
 /**
  *
- * @author q
+ * @author Jic
  */
-public class SingleViewControler extends HttpServlet {
+public class GetProductByKind extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,11 +32,32 @@ public class SingleViewControler extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int productId = Integer.parseInt(request.getParameter("productId"));
+        
+        String strKind = request.getParameter("kind");
+        
+        if (strKind == null) {
+            response.sendRedirect("index");
+            return;
+        }
+        
+        int kindID = Integer.parseInt(strKind);
+        
+        String pageIndex = request.getParameter("page");
+        pageIndex = (pageIndex == null) ? "1" : pageIndex;
+
         DatabaseContext db = new DatabaseContext();
-        Product singleProduct = db.getProductByID(productId);
-        request.setAttribute("product", singleProduct);
-        request.getRequestDispatcher("single.jsp").forward(request, response);
+        ArrayList<Product> productByKind = db.getProductByKind(kindID, Integer.parseInt(pageIndex), 9);
+
+        int pageCount = db.getNumberProductByKind(kindID) / 9;
+        if (db.getNumberProduct() / 9 != 0) {
+            pageCount += 1;
+        }
+
+        request.setAttribute("kindID", kindID);
+        request.setAttribute("pageCount", pageCount);
+        request.setAttribute("pageIndex", pageIndex);
+        request.setAttribute("products", productByKind);
+        request.getRequestDispatcher("products.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

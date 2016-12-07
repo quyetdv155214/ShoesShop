@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>N-Air a E-commerce category Flat Bootstrap Responsive Website Template | Checkout :: w3layouts</title>
+        <title>JShop</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="N-Air Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
@@ -38,7 +38,7 @@
             <div class="container">
                 <div class="header-top">
                     <div class="logo">
-                        <a href="index.jsp">JShop</a>
+                        <a href="index">JShop</a>
                     </div>
                     <div class="login-bars">
                         <% User user = (User) request.getSession().getAttribute("user"); %>
@@ -80,35 +80,26 @@
 
                             <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav nav-font">
-                                    <li class="dropdown">
-
-                                        <a href="products.jsp">Shoes</a>
-
-                                    </li>
-                                    <li class="dropdown">
+                                    <li><a href="index">Home</a></li>
+                                    <li>
                                         <a href="javascript:{}" onclick="document.getElementById('men').submit(); return false;">Men</a>
-
-                                        <form action="naviControler" method="post" id ="men">
+                                        <form action="kind" method="post" id ="men">
                                             <input type="hidden" value="1" name="kind">
                                         </form>
                                     </li>
-                                    <li class="dropdown">
-                                        <form action="naviControler" method="post" id="women">
+                                    <li>
+                                        <form action="kind" method="post" id="women">
                                             <input type="hidden" value="2" name="kind">
-
                                         </form>
                                         <a href="javascript:{}" onclick="document.getElementById('women').submit(); return false;">Women</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <form action="naviControler" method="post" id="kids">
+                                    <li>
+                                        <form action="kind" method="post" id="kids">
                                             <input type="hidden" value="3" name="kind">
                                         </form>
-
                                         <a href="javascript:{}" onclick="document.getElementById('kids').submit(); return false;">Kid</a>
-
                                     </li>
                                     <li><a href="contact.jsp">Catch</a></li>
-                                    <div class="clearfix"></div>
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>

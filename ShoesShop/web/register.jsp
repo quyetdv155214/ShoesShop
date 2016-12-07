@@ -75,7 +75,7 @@
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="index">Home</a></li>
                     <li><a href="signup.jsp">LOGIN</a></li>
                     <li class="active">REGISTER</li>
                 </ol>
@@ -179,7 +179,7 @@
                 <div class="col-md-2 re-ft-grd">
                     <div class="bt-logo">
                         <div class="logo">
-                            <a href="index.jsp" class="ft-log">JShop</a>
+                            <a href="index" class="ft-log">JShop</a>
                         </div>
                     </div>
                 </div>

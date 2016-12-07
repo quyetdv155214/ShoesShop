@@ -10,114 +10,113 @@ package model;
  * @author FLY
  */
 public class Product {
-    private Integer ProductID;
-    private String ProductName;
-    private int BrandID;
-    private int TypeID;
-    private int DiscountID;
-    private int CategoriID;
-    private int KindID;
-    private String Url;
-    private float Price;
+    private Integer productID;
+    private String productName;
+    private int brandID;
+    private int typeID;
+    private int discountID;
+    private int categoriID;
+    private int kindID;
+    private String url;
+    private float price;
     private String detail;
-
-    public float getPrice() {
-        return Price;
-    }
-
-    public void setPrice(float Price) {
-        this.Price = Price;
-    }
 
     public Product() {
     }
 
-    public Product(int ProductID, String ProductName, int BrandID, int TypeID, int DiscountID, int CategoriID, int KindID, String Url, float Price, String detail) {
-        this.ProductID = ProductID;
-        this.ProductName = ProductName;
-        this.BrandID = BrandID;
-        this.TypeID = TypeID;
-        this.DiscountID = DiscountID;
-        this.CategoriID = CategoriID;
-        this.KindID = KindID;
-        this.Url = Url;
-        this.Price = Price;
+    public Product(Integer productID, String productName, int brandID, int typeID, int discountID, int categoriID, int kindID, String url, float price, String detail) {
+        this.productID = productID;
+        this.productName = productName;
+        this.brandID = brandID;
+        this.typeID = typeID;
+        this.discountID = discountID;
+        this.categoriID = categoriID;
+        this.kindID = kindID;
+        this.url = url;
+        this.price = price;
         this.detail = detail;
     }
 
-    
-    
-
-    public int getProductID() {
-        return ProductID;
+    public Integer getProductID() {
+        return productID;
     }
 
-    public void setProductID(int ProductID) {
-        this.ProductID = ProductID;
+    public void setProductID(Integer productID) {
+        this.productID = productID;
     }
 
     public String getProductName() {
-        return ProductName;
+        return productName;
     }
 
-    public void setProductName(String ProductName) {
-        this.ProductName = ProductName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public int getBrandID() {
-        return BrandID;
+        return brandID;
     }
 
-    public void setBrandID(int BrandID) {
-        this.BrandID = BrandID;
+    public void setBrandID(int brandID) {
+        this.brandID = brandID;
     }
 
     public int getTypeID() {
-        return TypeID;
+        return typeID;
     }
 
-    public void setTypeID(int TypeID) {
-        this.TypeID = TypeID;
+    public void setTypeID(int typeID) {
+        this.typeID = typeID;
     }
 
     public int getDiscountID() {
-        return DiscountID;
+        return discountID;
     }
 
-    public void setDiscountID(int DiscountID) {
-        this.DiscountID = DiscountID;
+    public void setDiscountID(int discountID) {
+        this.discountID = discountID;
     }
 
     public int getCategoriID() {
-        return CategoriID;
+        return categoriID;
     }
 
-    public void setCategoriID(int CategoriID) {
-        this.CategoriID = CategoriID;
+    public void setCategoriID(int categoriID) {
+        this.categoriID = categoriID;
     }
 
     public int getKindID() {
-        return KindID;
+        return kindID;
     }
 
-    public void setKindID(int KindID) {
-        this.KindID = KindID;
+    public void setKindID(int kindID) {
+        this.kindID = kindID;
     }
 
     public String getUrl() {
-        return Url;
+        return url;
     }
 
-    public void setUrl(String Url) {
-        this.Url = Url;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" + "ProductID=" + ProductID + ", ProductName=" + ProductName + ", BrandID=" + BrandID + ", TypeID=" + TypeID + ", DiscountID=" + DiscountID + ", CategoriID=" + CategoriID + ", KindID=" + KindID + ", Url=" + Url + ", Price=" + Price + ", detail=" + detail + '}';
+    public float getPrice() {
+        return price;
     }
-    
-    
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
     
     
 }

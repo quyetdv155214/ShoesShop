@@ -107,6 +107,19 @@ public class DatabaseContext {
         return getAllProduct;
     }
 
+    public ArrayList<Product> getPagerProduct(int pageIndex, int pageSize) {
+        ArrayList<Product> getPagerProduct = new ArrayList<>();
+        try {
+            CallableStatement call = connection.prepareCall("{call getPagerProduct(?,?)}");
+            call.setInt(1, (pageIndex * pageSize - pageSize) + 1);
+            call.setInt(2, pageIndex * pageSize);
+            ResultSet rs = call.executeQuery();
+            getProductByResultSet(rs, getPagerProduct);
+        } catch (SQLException ex) {
+        }
+        return getPagerProduct;
+    }
+
     public ArrayList<Product> getProductByBrand(ArrayList<Integer> brandID) {
         ArrayList<Product> getProductByBrand = new ArrayList<>();
         for (int i : brandID) {
@@ -152,19 +165,49 @@ public class DatabaseContext {
         return getProductByDiscount;
     }
 
-    public ArrayList<Product> getProductByKind(ArrayList<Integer> kindID) {
-        ArrayList<Product> getProductByKind = new ArrayList<>();
-        for (int i : kindID) {
-            try {
-                CallableStatement call = connection.prepareCall("{call getProductByKind(?)}");
-                call.setInt(1, i);
-                ResultSet rs = call.executeQuery();
-                getProductByResultSet(rs, getProductByKind);
-            } catch (SQLException ex) {
-                System.out.println("");
+    public int getNumberProduct() {
+        String sql = "SELECT COUNT(*) AS totalRecord FROM ProductTBL";
+        int result = 0;
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                result = rs.getInt("totalRecord");
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseContext.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return result;
+    }
+    
+    public int getNumberProductByKind(int kind) {
+        String sql = "SELECT COUNT(*) AS totalRecord FROM ProductTBL WHERE KindID = ?";
+        int result = 0;
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, kind);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                result = rs.getInt("totalRecord");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result;
+    }
 
+    public ArrayList<Product> getProductByKind(int kindID, int pageIndex, int pageSize) {
+        ArrayList<Product> getProductByKind = new ArrayList<>();
+        try {
+            CallableStatement call = connection.prepareCall("{call getProductByKind(?,?,?)}");     
+            call.setInt(1, (pageIndex * pageSize - pageSize) + 1);
+            call.setInt(2, pageIndex * pageSize);
+            call.setInt(3, kindID);
+            ResultSet rs = call.executeQuery();
+            getProductByResultSet(rs, getProductByKind);
+        } catch (SQLException ex) {
+            System.out.println("");
+        }
         return getProductByKind;
     }
 

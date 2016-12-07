@@ -17,9 +17,9 @@ import model.Product;
 
 /**
  *
- * @author q
+ * @author Jic
  */
-public class NaviControler extends HttpServlet {
+public class GetAllProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,26 +32,19 @@ public class NaviControler extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String kind = request.getParameter("kind");
+        response.setContentType("text/html;charset=UTF-8");
         DatabaseContext db = new DatabaseContext();
-
-        if (kind == null) {
-            ArrayList<Product> allProduct = db.getAllProduct();
-            request.setAttribute("products", allProduct);
-            request.getRequestDispatcher("product.jsp").forward(request, response);
-        } else {
-            ArrayList<Integer> kindID = new ArrayList<>();
-            kindID.add(Integer.parseInt(kind));
-            ArrayList<Product> productByKind = db.getProductByKind(kindID);
-            for (Product product : productByKind) {
-                System.out.println(product.getUrl());
-                
-            }
-            request.setAttribute("products", productByKind);
-            request.getRequestDispatcher("products.jsp").forward(request, response);
-
+        String pageIndex = request.getParameter("page");
+        pageIndex = (pageIndex == null) ? "1" : pageIndex;
+        ArrayList<Product> allProduct = db.getPagerProduct(Integer.parseInt(pageIndex), 6);
+        request.setAttribute("products", allProduct);
+        int pageCount = db.getNumberProduct() / 6;
+        if (db.getNumberProduct() / 6 != 0) {
+            pageCount += 1;
         }
-
+        request.setAttribute("pageCount", pageCount);
+        request.setAttribute("pageIndex", pageIndex);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

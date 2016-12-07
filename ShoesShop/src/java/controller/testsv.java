@@ -5,20 +5,20 @@
  */
 package controller;
 
-import dal.DatabaseContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Product;
 
 /**
  *
- * @author q
+ * @author Jic
  */
-public class SingleViewControler extends HttpServlet {
+@WebServlet(name = "testsv", urlPatterns = {"/testsv"})
+public class testsv extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,11 +31,12 @@ public class SingleViewControler extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int productId = Integer.parseInt(request.getParameter("productId"));
-        DatabaseContext db = new DatabaseContext();
-        Product singleProduct = db.getProductByID(productId);
-        request.setAttribute("product", singleProduct);
-        request.getRequestDispatcher("single.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        String fruits[]= request.getParameterValues("checkbox");
+        for (int i = 0; i < fruits.length; i++) {
+            response.getWriter().print(fruits[i]);
+            response.getWriter().print("<br/>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
