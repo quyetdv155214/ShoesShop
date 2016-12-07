@@ -277,7 +277,7 @@
                 <div class="col-md-2 re-ft-grd">
                     <div class="bt-logo">
                         <div class="logo">
-                            <a href="index.jsp" class="ft-log">Jw-Shop</a>
+                            <a href="index.jsp" class="ft-log">JShop</a>
                         </div>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
             </div>
             <div class="copy-rt">
                 <div class="container">
-                    <p>&copy;   2015 N-AIR All Rights Reserved. Design by <a href="http://www.w3layouts.com">w3layouts</a></p>
+                    <p>&copy;   Project Java Web</p>
                 </div>
             </div>
         </div>
