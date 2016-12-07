@@ -5,20 +5,18 @@
  */
 package controller;
 
-import dal.DatabaseContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Product;
 
 /**
  *
  * @author q
  */
-public class SingleViewControler extends HttpServlet {
+public class EmptyControler extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,13 +29,8 @@ public class SingleViewControler extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int productId = Integer.parseInt(request.getParameter("productId"));
-        DatabaseContext db = new DatabaseContext();
-        Product singleProduct = db.getProductByID(productId);
-        request.getSession().setAttribute("product", singleProduct);
-        request.getRequestDispatcher("single.jsp").forward(request, response);
-        
-        
+       request.getSession().setAttribute("cart", null);
+       request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

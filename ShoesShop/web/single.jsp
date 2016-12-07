@@ -46,11 +46,11 @@
             });
         </script>
         <!-- //FlexSlider-->
-        <% Product product = (Product) request.getAttribute("product"); %>
-        
+        <% Product product = (Product) request.getSession().getAttribute("product");%>
+
     </head>
     <body>
-     
+
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
@@ -63,12 +63,12 @@
         <div class="showcase-grid">
             <div class="container">
                 <div class="col-md-8 showcase">
-                    <div class="flexslider">
+                    <div class="">
                         <ul class="slides">
                             <li data-thumb="images/show.jpg">
-                                <div class="thumb-image"> <img src="<%= product.getUrl() %>" data-imagezoom="true" class="img-responsive"> </div>
+                                <div class="thumb-image"> <img src="<%= product.getUrl()%>" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                           
+
                         </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -76,9 +76,9 @@
                 <div class="col-md-4 showcase">
                     <div class="showcase-rt-top">
                         <div class="pull-left shoe-name">
-                            <h3><%= product.getProductName() %></h3>
-                            
-                            <h4><%= product.getPrice() %></h4>
+                            <h3><%= product.getProductName()%></h3>
+
+                            <h4><%= product.getPrice()%></h4>
                         </div>
                         <div class="pull-left rating-stars">
                             <ul>
@@ -87,8 +87,8 @@
                                 <li><a href="#" class="active"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
                                 <li><a href="#"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
                                 <li><a href="#"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
-                                
-                                
+
+
                             </ul>
                         </div>
                         <div class="clearfix"></div>
@@ -110,22 +110,24 @@
                                 </li>
                                 <li class="qty">
                                     <h4>QTY</h4>
-                                    <select class="form-control qnty-chrt">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                    </select>
+                                    <form action="addtocart" method="get" id="nopForm">
+                                        <select class="form-control qnty-chrt" name="nop"> 
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                        </select>
+                                    </form>
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
                         <ul>
                             <li class="ad-2-crt simpleCart_shelfItem">
-                                <a class="btn item_add" href="#" role="button">Add To Cart</a>
+                                <a class="btn item_add" href="javascript:{}" onclick="document.getElementById('nopForm').submit(); return false;" role="button">Add To Cart</a>
                                 <a class="btn" href="#" role="button">Buy Now</a>
                             </li>
                         </ul>

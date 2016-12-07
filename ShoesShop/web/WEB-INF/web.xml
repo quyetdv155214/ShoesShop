@@ -20,6 +20,18 @@
         <servlet-name>SingleViewControler</servlet-name>
         <servlet-class>controller.SingleViewControler</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ShoppingCartControler</servlet-name>
+        <servlet-class>controller.ShoppingCartControler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmptyControler</servlet-name>
+        <servlet-class>controller.EmptyControler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckOutControler</servlet-name>
+        <servlet-class>controller.CheckOutControler</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterController</servlet-name>
         <url-pattern>/register</url-pattern>
@@ -39,6 +51,18 @@
     <servlet-mapping>
         <servlet-name>SingleViewControler</servlet-name>
         <url-pattern>/singleView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShoppingCartControler</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmptyControler</servlet-name>
+        <url-pattern>/emptycart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckOutControler</servlet-name>
+        <url-pattern>/checkout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

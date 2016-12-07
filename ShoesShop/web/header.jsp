@@ -53,12 +53,34 @@
                         <%}%>
 
                         <div class="cart box_1">
-                            <a href="checkout.jsp">
+                           
                                 <h3>
                                     <div class="total">
-                                        <span class="simpleCart_total"></span>(<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)</div></h3>
-                            </a>
-                            <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+                                        <%  Float totalMoney  = (Float) request.getSession().getAttribute("totalMoney"); 
+                                            Integer totalPro =(Integer)request.getSession().getAttribute("totalPro"); 
+                                            if(totalPro == null){
+                                                totalPro= new Integer("0");
+                                            }
+                                             if(totalMoney == null){
+                                                totalMoney= new Float("0");
+                                            }
+                                            
+                                        %>
+                                        <h3><%= totalMoney %> $(<%= totalPro %>)ahihi </h3>
+
+                                        </span
+                                        <span>
+                                            <form action="checkout" method="get" id="checkout">
+                                                <p><a href="javascript:{}" onclick="document.getElementById('checkout').submit(); return false;"  class="simpleCart_empty">Check out</a></p>
+
+                                            </form>
+                                        </span>
+                                    </div>
+                                </h3>
+                           
+                            <form action="emptycart" method="post" id="empty">
+                                <p><a href="javascript:{}" onclick="document.getElementById('empty').submit(); return false;"  class="simpleCart_empty">Empty Cart</a></p>
+                            </form>
                             <div class="clearfix"> </div>
                         </div>	
                     </div>
