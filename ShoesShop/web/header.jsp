@@ -101,7 +101,7 @@
                                     </li>
                                     <li class="dropdown">
                                         <form action="naviControler" method="post" id="kids">
-                                            <input type="hidden" value="2" name="kind">
+                                            <input type="hidden" value="3" name="kind">
                                         </form>
 
                                         <a href="javascript:{}" onclick="document.getElementById('kids').submit(); return false;">Kid</a>
