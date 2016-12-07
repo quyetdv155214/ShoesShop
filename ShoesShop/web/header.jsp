@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-     <head>
+    <head>
         <title>N-Air a E-commerce category Flat Bootstrap Responsive Website Template | Checkout :: w3layouts</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,23 +30,8 @@
         <!--bootstrap-js-->
         <script src="js/bootstrap.min.js"></script>
         <!--script-->
-        <!-- FlexSlider -->
-        <script src="js/imagezoom.js"></script>
-        <script defer src="js/jquery.flexslider.js"></script>
-        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 
-        <script>
-            // Can also be used with $(document).ready()
-            $(window).load(function () {
-                $('.flexslider').flexslider({
-                    animation: "slide",
-                    controlNav: "thumbnails"
-                });
-            });
-        </script>
-        <!-- //FlexSlider-->
-        
-        <% User user = (User) request.getSession().getAttribute("user"); %>
+
     </head>
     <body>
         <div class="header">
@@ -56,18 +41,17 @@
                         <a href="index.jsp">N-AIR</a>
                     </div>
                     <div class="login-bars">
-                        
-                        <% if(user == null) {%>
+                        <% User user = (User) request.getSession().getAttribute("user"); %>
+                        <% if (user == null) {%>
                         <a class="btn btn-default log-bar" href="register.jsp" role="button">Sign up</a>
                         <a class="btn btn-default log-bar" href="signup.jsp" role="button">Login</a>
-                        <%}else {%>{
-                            
-                            <form action="logout" method="post" id="logout">
-                                <%= user.getFirstName() +" " + user.getLastName()%>
-                                <a class="btn btn-default log-bar" href="javascript:{}" onclick="document.getElementById('logout').submit(); return false;" role="button">Log out</a>
-                            </form>
+                        <%} else {%>
+                        <form action="logout" method="post" id="logout">
+                            <span><%=user.getFirstName() + " " + user.getLastName()%></span>
+                            <a class="btn btn-default log-bar" href="javascript:{}" onclick="document.getElementById('logout').submit(); return false;" role="button">Log out</a>
+                        </form>
                         <%}%>
-                        
+
                         <div class="cart box_1">
                             <a href="checkout.jsp">
                                 <h3>
@@ -97,73 +81,31 @@
                             <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav nav-font">
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="products.jsp">Shoes</a></li>
-                                            <li><a href="products.jsp">Tees</a></li>
-                                            <li><a href="products.jsp">Tops</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="products.jsp">Tracks</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="products.jsp">Gear</a></li>
-                                        </ul>
+
+                                        <a href="products.jsp">Shoes</a>
+
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men<b class="caret"></b></a>
-                                        <ul class="dropdown-menu multi-column columns-3">
-                                            <div class="row">
-                                                <div class="col-sm-4 menu-img-pad">
-                                                    <ul class="multi-column-dropdown">
-                                                        <li><a href="products.jsp">Joggers</a></li>
-                                                        <li><a href="products.jsp">Foot Ball</a></li>
-                                                        <li><a href="products.jsp">Cricket</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="products.jsp">Tennis</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="products.jsp">Casual</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-sm-4 menu-img-pad">
-                                                    <a href="#"><img src="images/menu1.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
-                                                </div>
-                                                <div class="col-sm-4 menu-img-pad">
-                                                    <a href="#"><img src="images/menu2.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
-                                                </div>
-                                            </div>
-                                        </ul>
+                                        <a href="javascript:{}" onclick="document.getElementById('men').submit(); return false;">Men</a>
+
+                                        <form action="naviControler" method="post" id ="men">
+                                            <input type="hidden" value="1" name="kind">
+                                        </form>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
-                                        <ul class="dropdown-menu multi-column columns-2">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <ul class="multi-column-dropdown">
-                                                        <li><a href="products.jsp">Tops</a></li>
-                                                        <li><a href="products.jsp">Bottoms</a></li>
-                                                        <li><a href="products.jsp">Yoga Pants</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="products.jsp">Sports</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="products.jsp">Gym</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <a href="#"><img src="images/menu3.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
-                                                </div>
-                                            </div>
-                                        </ul>
+                                        <form action="naviControler" method="post" id="women">
+                                            <input type="hidden" value="2" name="kind">
+
+                                        </form>
+                                        <a href="javascript:{}" onclick="document.getElementById('women').submit(); return false;">Women</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">kids<b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="products.jsp">Tees</a></li>
-                                            <li><a href="products.jsp">Shorts</a></li>
-                                            <li><a href="products.jsp">Gear</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="products.jsp">Watches</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="products.jsp">Shoes</a></li>
-                                        </ul>
+                                        <form action="naviControler" method="post" id="kids">
+                                            <input type="hidden" value="2" name="kind">
+                                        </form>
+
+                                        <a href="javascript:{}" onclick="document.getElementById('kids').submit(); return false;">Kid</a>
+
                                     </li>
                                     <li><a href="contact.jsp">Catch</a></li>
                                     <div class="clearfix"></div>
@@ -181,6 +123,9 @@
                 <!--header-bottom-->
             </div>
         </div>
-        
+
+
+
+
     </body>
 </html>
