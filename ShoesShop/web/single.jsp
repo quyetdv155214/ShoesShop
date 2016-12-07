@@ -63,9 +63,9 @@
         <div class="showcase-grid">
             <div class="container">
                 <div class="col-md-8 showcase">
-                    <div class="flexslider">
+                    <div>
                         <ul class="slides">
-                            <li data-thumb="images/show.jpg">
+                            <li>
                                 <div class="thumb-image"> <img src="<%= product.getUrl() %>" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
                            

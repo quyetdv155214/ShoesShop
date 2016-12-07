@@ -87,10 +87,10 @@
                         </div>
                         <!-- end normal -->
                         <div class="quick-view">
-                            <form action="singleView" method="post" id="single<%= p.getProductID() %>">
+                            <form action="singleView" method="post" id="single<%= p.getProductID()%>">
                                 <input type="hidden" name="productId" value="<%= p.getProductID()%>">
                             </form>
-                            <a href="javascript:{}" onclick="document.getElementById('single<%= p.getProductID() %>').submit(); return false;">Quick view</a>
+                            <a href="javascript:{}" onclick="document.getElementById('single<%= p.getProductID()%>').submit(); return false;">Quick view</a>
 
                         </div>
                     </div>
@@ -260,6 +260,9 @@
                 </div>
                 <div class="clearfix"></div>
             </div> 
+        </div>
+        <div class="text-center">
+            <input class="btn btn-primary" value="sdsad"/>
         </div>
         <div class="footer-grid">
             <div class="container">
