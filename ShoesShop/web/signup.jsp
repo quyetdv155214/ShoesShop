@@ -72,9 +72,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="strip"></div>
                         <p>Welcome, please enter the following to continue.</p>
                         <p>If you have previously Login with us, <a href="#">Click Here</a></p>
-                        <form action="login" method="get">
+                        //
+                        <form action="login" method="post">
                             <h5>Email:</h5>	
-                            <input type="text" value="" name="username">
+                            <input type="text" value="" name="email">
                             <h5>Password:</h5>
                             <input type="password" value="" name="password"><br>					
                             <input type="submit" value="Login">
@@ -138,7 +139,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="copy-rt">
                 <div class="container">
-                    <p>&copy;   Project Java Web</p>
+                    <p>&copy;   Project Java Web - SE1007</p>
                 </div>
             </div>
         </div>

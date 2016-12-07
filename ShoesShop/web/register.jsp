@@ -13,24 +13,24 @@
     <% String passShort = request.getAttribute("passShort") + ""; %>
     <% String invalidEmail = request.getAttribute("invalidEmail") + ""; %>
     <% String invalidMobile = request.getAttribute("invalidMobile") + ""; %>
-
+    
     <% String firstName = (String) request.getAttribute("firstName"); %>
     <% firstName = (firstName != null) ? firstName : ""; %>
-
+    
     <% String lastName = (String) request.getAttribute("lastName"); %>
     <% lastName = (lastName != null) ? lastName : ""; %>
-
+    
     <% String email = (String) request.getAttribute("email"); %>
     <% email = (email != null) ? email : ""; %>
-
+    
     <% String password = (String) request.getAttribute("password"); %>
     <% password = (password != null) ? password : ""; %>
-
+    
     <% String rePassword = (String) request.getAttribute("rePassword"); %>
     <% rePassword = (rePassword != null) ? rePassword : ""; %>
-
+    
     <% String mobile = (String) request.getAttribute("mobile"); %>
-    <% mobile = (mobile != null) ? mobile : "";%>
+    <% mobile = (mobile != null) ? mobile : ""; %>
 
     <head>
         <title>N-Air a E-commerce category Flat Bootstrap Responsive Website Template | Checkout :: w3layouts</title>
@@ -71,12 +71,12 @@
         <!-- //FlexSlider-->
     </head>
     <body>
-
+      
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
                     <li><a href="index.jsp">Home</a></li>
-                    <li><a href="register.jsp">LOGIN</a></li>
+                    <li><a href="signup.jsp">LOGIN</a></li>
                     <li class="active">REGISTER</li>
                 </ol>
             </div>
@@ -91,16 +91,16 @@
                     <form action="register" method="Post">
                         <ul>
                             <li class="text-info">First Name: </li>
-                            <li><input type="text" name="firstname" required="" value="<%= firstName%>"></li>
+                            <li><input type="text" name="firstname" required="" value="<%= firstName %>"></li>
                         </ul>
                         <ul>
                             <li class="text-info">Last Name: </li>
-                            <li><input type="text" name="lastname" required="" value="<%= lastName%>"></li>
+                            <li><input type="text" name="lastname" required="" value="<%= lastName %>"></li>
                         </ul>				 
                         <ul>
                             <li class="text-info">Email: </li>
-                            <li><input type="text" name="mail" required="" value="<%= email%>"></li>
-                                <%if (invalidEmail.equals("invalidEmail")) {%>
+                            <li><input type="text" name="mail" required="" value="<%= email %>"></li>
+                            <%if (invalidEmail.equals("invalidEmail")) {%>
                             <li style="color: red">
                                 Your email invalid
                             </li>
@@ -109,8 +109,8 @@
                         </ul>
                         <ul>
                             <li class="text-info">Password: </li>
-                            <li><input type="password" name="password" required="" value="<%= password%>"></li>
-                                <%if (passShort.equals("passShort")) {%>
+                            <li><input type="password" name="password" required="" value="<%= password %>"></li>
+                            <%if (passShort.equals("passShort")) {%>
                             <li style="color: red">
                                 Must contain at least 6 more characters
                             </li>
@@ -119,7 +119,7 @@
                         </ul>
                         <ul>
                             <li class="text-info">Re-enter Password:</li>
-                            <li><input type="password" name="repassword" required="" value="<%= rePassword%>"></li>
+                            <li><input type="password" name="repassword" required="" value="<%= rePassword %>"></li>
                                 <%if (passFail.equals("passFail")) {%>
                             <li style="color: red">
                                 Re-Enter Password must same password
@@ -129,7 +129,13 @@
                         </ul>
                         <ul>
                             <li class="text-info">Mobile Number:</li>
-                            <li><input type="text" name="mobile" value="<%= mobile%>"></li>
+                            <li><input type="text" name="mobile" value="<%= mobile %>"></li>
+                            <%if (invalidMobile.equals("invalidMobile")) {%>
+                            <li style="color: red">
+                                Your mobile number invalid
+                            </li>
+                            <% request.setAttribute("invalidMobile", null); %>
+                            <%}%> 
                         </ul>						
                         <input type="submit" value="Register Now">
                         <p class="click">By clicking this button, you are agree to my  <a href="#">Policy Terms and Conditions.</a></p> 
@@ -181,7 +187,7 @@
             </div>
             <div class="copy-rt">
                 <div class="container">
-                    <p>&copy;   Project Java Web</p>
+                    <p>&copy;   Project Java Web - SE1007</p>
                 </div>
             </div>
         </div>

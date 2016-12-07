@@ -12,6 +12,14 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>controller.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NaviControler</servlet-name>
+        <servlet-class>controller.NaviControler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SingleViewControler</servlet-name>
+        <servlet-class>controller.SingleViewControler</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterController</servlet-name>
         <url-pattern>/register</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NaviControler</servlet-name>
+        <url-pattern>/naviControler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SingleViewControler</servlet-name>
+        <url-pattern>/singleView</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
