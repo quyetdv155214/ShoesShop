@@ -14,8 +14,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Brand;
+import model.Categori;
+import model.Discount;
 import model.Oder;
 import model.Product;
+import model.Type;
 import model.User;
 
 /**
@@ -105,6 +109,15 @@ public class DatabaseContext {
         }
 
         return getAllProduct;
+    }
+    
+    public ArrayList<Product> search(ArrayList<Integer> brandID,
+                                    ArrayList<Integer> categoriID,
+                                    ArrayList<Integer> discountID,
+                                    ArrayList<Integer> kindID){
+        ArrayList<Product> search = new ArrayList<>();
+        
+        return search;
     }
 
     public ArrayList<Product> getProductByBrand(ArrayList<Integer> brandID) {
@@ -275,5 +288,90 @@ public class DatabaseContext {
 
         return product;
     }
+    
+    public ArrayList<Categori> getCategori(){
+        ArrayList<Categori> categori = new ArrayList<>();
+        try {
+            CallableStatement call = connection.prepareCall("{call getCategori}");
+            ResultSet rs = call.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                Categori c = new Categori(id, name);
+                categori.add(c);
+            }
+        } catch (SQLException ex) {
+        }
+        return categori;
+    }
+    
+    public ArrayList<Brand> getBrand(){
+        ArrayList<Brand> brand = new ArrayList<>();
+        try {
+            CallableStatement call = connection.prepareCall("{call getBrand}");
+            ResultSet rs = call.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                Brand b = new Brand(id, name);
+                brand.add(b);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return brand;
+    }
+    
+    public ArrayList<Discount> getDiscount(){
+        ArrayList<Discount> discount = new ArrayList<>();
+        try {
+            CallableStatement call = connection.prepareCall("{call getDiscount}");
+            ResultSet rs = call.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                Discount d = new Discount(id, name);
+                discount.add(d);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return discount;
+    }
+    
+    public ArrayList<Type> getType (){
+        ArrayList<Type> type = new ArrayList<>();
+        try {
+            CallableStatement call = connection.prepareCall("{call getType}");
+            ResultSet rs = call.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                Type t = new Type(id, name);
+                type.add(t);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return type;
+    }
+    
+    
+    public ArrayList<Product> getPagerProduct( int pageIndex, int pageSize) {
+        ArrayList<Product> getPagerProduct = new ArrayList<>();
+            try {
+                CallableStatement call = connection.prepareCall("{call getPagerProduct(?,?)}");
+                call.setInt(1, (pageIndex*pageSize - pageSize +1));
+                call.setInt(2, (pageIndex*pageSize));
+                
+                ResultSet rs = call.executeQuery();
+                getProductByResultSet(rs, getPagerProduct);
+            } catch (SQLException ex) {
+            }
+        
 
+        return getPagerProduct;
+    }
+    
+    
 }
