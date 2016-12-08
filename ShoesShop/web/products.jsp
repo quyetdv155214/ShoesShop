@@ -103,6 +103,7 @@
                 </div>
                 <div class="col-md-3 grid-details">                   
                     <form action="testsv">
+                        <input type="hidden" value="${requestScope.kindID}" name="test"/>
                         <div class="grid-addon">
                             <section  class="sky-form">
                                 <h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Type</h4>
@@ -138,7 +139,7 @@
                                     </div>
                                 </div>
                             </section>	
-                            <div>
+                            <div class="text-center">
                                 <input type="submit" class="btn btn-success" value="Search"/>
                             </div>
                         </div>

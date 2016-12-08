@@ -52,7 +52,6 @@ public class GetProductByKind extends HttpServlet {
         if (db.getNumberProduct() / 9 != 0) {
             pageCount += 1;
         }
-
         request.setAttribute("kindID", kindID);
         request.setAttribute("pageCount", pageCount);
         request.setAttribute("pageIndex", pageIndex);

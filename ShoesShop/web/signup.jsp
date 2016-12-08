@@ -53,7 +53,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-- //FlexSlider-->
     </head>
     <body>
-      
+
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
@@ -72,7 +72,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="strip"></div>
                         <p>Welcome, please enter the following to continue.</p>
                         <p>If you have previously Login with us, <a href="#">Click Here</a></p>
-                        //
                         <form action="login" method="post">
                             <h5>Email:</h5>	
                             <input type="text" value="" name="email">
@@ -81,7 +80,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <input type="submit" value="Login">
 
                         </form>
-                        <a href="#">Forgot Password ?</a>
+                        <a data-toggle="modal" data-target="#myModal">Forgot Password ?</a>
+                        <!-- Trigger the modal with a button -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <form action="reset">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Enter your email to reset password</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label style="margin-left: 50px; margin-right: 50px">Email:</label>
+                                            <input type="email" name="resetemail" required="" style="width: 300px"/>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-default">Confirm</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6 login-right">
                         <h3>New Registration</h3>

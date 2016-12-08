@@ -32,11 +32,14 @@ public class testsv extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String fruits[]= request.getParameterValues("checkbox");
-        for (int i = 0; i < fruits.length; i++) {
-            response.getWriter().print(fruits[i]);
-            response.getWriter().print("<br/>");
-        }
+        
+        response.getWriter().print(request.getParameter("test"));
+        
+//        String fruits[]= request.getParameterValues("checkbox");
+//        for (int i = 0; i < fruits.length; i++) {
+//            response.getWriter().print(fruits[i]);
+//            response.getWriter().print("<br/>");
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

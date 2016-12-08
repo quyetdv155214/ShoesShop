@@ -252,11 +252,10 @@ public class DatabaseContext {
 
     public void ChangePassword(String email, String password) {
         try {
-            CallableStatement call = connection.prepareCall("{call CheckLogin(?,?)}");
+            CallableStatement call = connection.prepareCall("{call ChangePassword(?,?)}");
             call.setString(1, email);
             call.setString(2, password);
             call.executeUpdate();
-
         } catch (SQLException ex) {
         }
     }

@@ -87,7 +87,7 @@
                 <div class="reg">
                     <h3>Register Now</h3>
                     <p>Welcome, please enter the following details to continue.</p>
-                    <p>If you have previously registered with us, <a href="#">click here</a></p>
+                    <p>If you have previously registered with us, <a href="signup.jsp">click here</a></p>
                     <form action="register" method="Post">
                         <ul>
                             <li class="text-info">First Name: </li>

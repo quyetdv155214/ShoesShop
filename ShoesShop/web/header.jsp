@@ -46,10 +46,57 @@
                         <a class="btn btn-default log-bar" href="register.jsp" role="button">Sign up</a>
                         <a class="btn btn-default log-bar" href="signup.jsp" role="button">Login</a>
                         <%} else {%>
-                        <form action="logout" method="post" id="logout">
-                            <span><%=user.getFirstName() + " " + user.getLastName()%></span>
-                            <a class="btn btn-default log-bar" href="javascript:{}" onclick="document.getElementById('logout').submit(); return false;" role="button">Log out</a>
-                        </form>
+
+                        <a data-toggle="modal" data-target="#myModal"><h3><%=user.getFirstName() + " " + user.getLastName()%></h3></a>
+                        <!-- Trigger the modal with a button -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Information</h4>
+                                    </div>
+                                    <div class="form-group container text-center" style="margin: auto">
+                                        <div class="panel panel-info col-xs-6" > <br/>
+                                            <div class="form-group">
+                                                <label  class="col-sm-2 control-label">Name</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="name" class="form-control" value="<%= user.getFirstName() + " " + user.getLastName()%>" disabled="">
+                                                </div>
+                                            </div>
+                                            <br/><br/>
+                                            <div class="form-group">
+                                                <label  class="col-sm-2 control-label">Email</label>
+                                                <div class="col-sm-8">
+                                                    <input type="email" name="joinDate" class="form-control" value="<%= user.getEmail()%>" disabled="">
+                                                </div>
+                                            </div>
+                                            <br/><br/>
+                                            <div class="form-group"> 
+                                                <label  class="col-sm-2 control-label">Password</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" name="outDate" class="form-control" value="password" disabled="">
+                                                </div>
+                                                <div class="col-sm-2"> 
+                                                    <form action="change" method="get">
+                                                        <input type="submit" class="btn btn-link text-center" value="Change">
+                                                        <input type="hidden" value="<%= user.getEmail() %>" name="userMail"/>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <br/><br/>
+                                        </div>         
+                                    </div>
+                                    <form action="logout" method="post" id="logout">
+                                        <a class="btn btn-warning" href="javascript:{}" onclick="document.getElementById('logout').submit(); return false;" role="button">Log out</a>
+                                    </form>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+
                         <%}%>
 
                         <div class="cart box_1">
@@ -79,28 +126,30 @@
                             <!--/.navbar-header-->
 
                             <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav nav-font">
-                                    <li><a href="index">Home</a></li>
-                                    <li>
-                                        <a href="javascript:{}" onclick="document.getElementById('men').submit(); return false;">Men</a>
-                                        <form action="kind" method="post" id ="men">
-                                            <input type="hidden" value="1" name="kind">
-                                        </form>
-                                    </li>
-                                    <li>
-                                        <form action="kind" method="post" id="women">
-                                            <input type="hidden" value="2" name="kind">
-                                        </form>
-                                        <a href="javascript:{}" onclick="document.getElementById('women').submit(); return false;">Women</a>
-                                    </li>
-                                    <li>
-                                        <form action="kind" method="post" id="kids">
-                                            <input type="hidden" value="3" name="kind">
-                                        </form>
-                                        <a href="javascript:{}" onclick="document.getElementById('kids').submit(); return false;">Kid</a>
-                                    </li>
-                                    <li><a href="contact.jsp">Catch</a></li>
-                                </ul>
+                                <div class="text-center">
+                                    <ul class="nav navbar-nav nav-font">
+                                        <li><a href="index">Home</a></li>
+                                        <li>
+                                            <a href="javascript:{}" onclick="document.getElementById('men').submit(); return false;">Men</a>
+                                            <form action="kind" method="post" id ="men">
+                                                <input type="hidden" value="1" name="kind">
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form action="kind" method="post" id="women">
+                                                <input type="hidden" value="2" name="kind">
+                                            </form>
+                                            <a href="javascript:{}" onclick="document.getElementById('women').submit(); return false;">Women</a>
+                                        </li>
+                                        <li>
+                                            <form action="kind" method="post" id="kids">
+                                                <input type="hidden" value="3" name="kind">
+                                            </form>
+                                            <a href="javascript:{}" onclick="document.getElementById('kids').submit(); return false;">Kid</a>
+                                        </li>
+                                        <li><a href="contact.jsp">Catch</a></li>
+                                    </ul>
+                                </div>
                                 <div class="clearfix"></div>
                             </div>
                             <!--/.navbar-collapse-->
